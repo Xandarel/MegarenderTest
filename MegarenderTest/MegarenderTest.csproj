@@ -130,6 +130,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include=".gitignore" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="MatrixXNumber.aspx" />
     <Content Include="multiplicationMatrix.aspx" />
@@ -202,6 +203,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Matrix.cs" />
     <Compile Include="MatrixCalculator.cs" />
     <Compile Include="MatrixCreator.cs" />
     <Compile Include="MatrixXNumber.aspx.cs">
