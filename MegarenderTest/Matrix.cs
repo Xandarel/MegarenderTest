@@ -74,11 +74,11 @@ namespace MegarenderTest
             var result = new decimal[a.squareSize, a.squareSize];
             for(var x=0;x<a.squareSize;x++)
                 for(var y=0;y<a.squareSize;y++)
-                    result[y, x] = a.data[y, x] + b.data[y, x];
+                    result[x, y] = a.data[x, y] + b.data[x, y];
             return new Matrix(a.squareSize, result);
         }
 
-        public static Matrix operator *(Matrix a, int b)
+        public static Matrix operator *(Matrix a, decimal b)
         {
             var result = new decimal[a.squareSize, a.squareSize];
             for (var x = 0; x < a.squareSize; x++)
@@ -86,7 +86,7 @@ namespace MegarenderTest
                     result[y, x] = a.data[y, x] * b;
             return new Matrix(a.squareSize, result);
         }
-        public static Matrix operator *(int b, Matrix a) => new Matrix(a.squareSize, (a * b).data);
+        public static Matrix operator *(decimal b, Matrix a) => new Matrix(a.squareSize, (a * b).data);
 
         public static Matrix operator -(Matrix a, Matrix b) => new Matrix(a.squareSize, (a + ((-1) * b)).data);
 
@@ -97,7 +97,7 @@ namespace MegarenderTest
             var result = new decimal[a.squareSize, a.squareSize];
             for (var x = 0; x < a.data.GetLength(0); x++)
                 for (var y = 0; y < b.data.GetLength(1); y++)
-                    result[y, x] = RowXColumn(a.getRow(x), b.getColumn(y));
+                    result[y, x] = RowXColumn(a.getRow(y), b.getColumn(x));
             return new Matrix(a.squareSize, result);
         }
     }
